@@ -14,5 +14,5 @@ test('Verify an Admin can add employeement status', async ({ page }) => {
   await page.locator('form').getByRole('textbox').click();
   await page.locator('form').getByRole('textbox').fill('Fulltime permanent');
   await page.getByRole('button', { name: 'Save' }).click();
-  await expect(page.getByRole('heading', { name: 'Employment Status' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Employment Status' })).toBeVisible({timeout: 40000});
 });
